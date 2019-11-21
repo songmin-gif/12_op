@@ -4,9 +4,20 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 #include <string.h>
 #include <stdio.h> 
-void main(void) { 
-char str[30]="happy C programming";
+int main(int argc, char* argv[]){
 
-printf("%s: %i\n", str,strlen(str));
+int i;
+char input[100];
+FILE *fp; 
+
+fp = fopen("sample.txt", "w");
+for (i=0;i<3;i++)
+{
+  
+printf("input a word:");
+scanf("%s", input);
+fprintf(fp,"%s\n", input);
+}
+fclose(fp);
 return 0;
 }
